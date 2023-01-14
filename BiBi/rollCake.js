@@ -1,3 +1,6 @@
+// 문제 이해를 잘못한게 가장 큰 실수
+// length로 매번 길이를 구해서 비교하면 시간 초과가 일어난다는 점
+
 function solution(topping) {
     let answer = 0;
     const toppingbro = {}
