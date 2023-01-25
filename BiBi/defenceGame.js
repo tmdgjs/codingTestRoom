@@ -5,6 +5,7 @@ function solution(n, k, enemy) {
     // 매 라운드마다 공격해오는 적의 수가 순서대로 담긴 정수 배열 enemy가 매개변수로 주어집니다
 
     let answer = 0;
+    let mujuk = k;
 
     if(k >= enemy.length){
       return enemy.length;
@@ -19,11 +20,20 @@ function solution(n, k, enemy) {
 
       if(n <= 0){
          if(k>0){
-            winning.sort((a,b)=> a-b)
-            n = n + winning[right];
-            winning.pop();
-            right -= 1;
-            k --;
+            if(k == mujuk){
+               winning.sort((a,b)=> a-b)
+               n = n + winning[right];
+               winning.pop();
+               right -= 1;
+               k --;
+            }else{
+               winning.slice(mujuk, right).sort((a,b)=> a-b)
+               n = n + winning[right];
+               winning.pop();
+               right -= 1;
+               k --;
+            }
+
          }else{
             break;
          }
