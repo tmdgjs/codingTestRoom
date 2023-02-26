@@ -16,8 +16,8 @@ class Solution {
         Queue<Integer> realQueue2 = new LinkedList<>(Arrays.asList(boxedBuff2));
 
         // 두 큐의 합 구하기 ( 오버플로우 long )
-        int queue1Sum = Arrays.stream(queue1).sum();
-        int queue2Sum = Arrays.stream(queue2).sum();
+        long queue1Sum = Arrays.stream(queue1).sum();
+        long queue2Sum = Arrays.stream(queue2).sum();
 
         while (queue1Sum != queue2Sum) {
             
